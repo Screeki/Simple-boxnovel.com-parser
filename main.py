@@ -23,11 +23,11 @@ try:
         textContainer = soup.find_all("div", {"class": "text-left"})
         novelChapters.append(textContainer[0].text)
         document.add_paragraph(novelChapters[i])
+        print(f"{curChapter} added to doc")
+        document.save('NotTranslated.docx')
         curChapter += 1
         i += 1
         countChapters -= 1
-        print(f"{curChapter} added to doc")
-        document.save('NotTranslated.docx')
 except IndexError:
     print("End of chapters")
 
